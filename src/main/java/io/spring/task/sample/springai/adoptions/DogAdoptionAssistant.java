@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DogAdoptionAssistant {
 
-    //@Bean
+    @Bean
     ChatClient client(ChatClient.Builder builder, DogRepository dogRepository, VectorStore vectorStore){
 
         var systemPrompt = """
@@ -28,7 +28,7 @@ public class DogAdoptionAssistant {
                 .build();
     }
 
-    //@Bean
+    @Bean
     ApplicationRunner demoApplicationRunner(ChatClient client,
                                             DogRepository dogRepository,
                                             VectorStore vectorStore){
